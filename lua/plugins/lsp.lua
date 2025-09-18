@@ -12,12 +12,13 @@ return {
   {
     "neovim/nvim-lspconfig",
     config = function()
-      local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      vim.lsp.enable('rust-analyzer')
+      vim.lsp.enable('asm-lsp')
+      vim.lsp.enable('lua_ls')
+      vim.lsp.enable('clangd')
+      vim.lsp.enable('pylsp')
 
-      -- Ejemplo: configurar LSP para Lua y Python
-      lspconfig.lua_ls.setup { capabilities = capabilities }
-      lspconfig.pyright.setup { capabilities = capabilities }
     end,
   },
 
